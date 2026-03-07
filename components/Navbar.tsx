@@ -1,16 +1,18 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
     <div className="container mx-auto flex items-center justify-between py-4 px-6">
-      <a href="#" className="font-display text-2xl text-foreground">
+      <Link href="/" className="font-display text-2xl text-foreground">
         Artesia Bookkeeping
-      </a>
+      </Link>
       <div className="hidden md:flex items-center gap-8 font-body text-sm font-medium text-muted-foreground">
-        <a href="#services" className="hover:text-foreground transition-colors">Services</a>
-        <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
-        <a href="#about" className="hover:text-foreground transition-colors">About</a>
-        <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+        <a href="/#services" className="hover:text-foreground transition-colors">Services</a>
+        <a href="/#pricing" className="hover:text-foreground transition-colors">Pricing</a>
+        <a href="/#about" className="hover:text-foreground transition-colors">About</a>
+        <a href="/#contact" className="hover:text-foreground transition-colors">Contact</a>
+        <Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link>
       </div>
       <a
         href="#contact"
