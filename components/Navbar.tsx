@@ -8,10 +8,10 @@ const Navbar = () => (
         Artesia Bookkeeping
       </Link>
       <div className="hidden md:flex items-center gap-8 font-body text-sm font-medium text-muted-foreground">
-        <a href="/#services" className="hover:text-foreground transition-colors">Services</a>
-        <a href="/#pricing" className="hover:text-foreground transition-colors">Pricing</a>
-        <a href="/#about" className="hover:text-foreground transition-colors">About</a>
-        <a href="/#contact" className="hover:text-foreground transition-colors">Contact</a>
+        <a href="#services" className="hover:text-foreground transition-colors">Services</a>
+        <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
+        <a href="#about" className="hover:text-foreground transition-colors">About</a>
+        <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
         <Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link>
       </div>
       <a

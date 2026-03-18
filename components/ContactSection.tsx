@@ -11,12 +11,26 @@ const ContactSection = () => {
     business: "",
     message: "",
   });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    alert("Thanks for reaching out! We'll get back to you within 24 hours.");
-    setFormData({ name: "", email: "", business: "", message: "" });
+    setStatus("loading");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error();
+
+      setStatus("success");
+      setFormData({ name: "", email: "", business: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -116,11 +130,22 @@ const ContactSection = () => {
                 placeholder="Tell me about your business and what kind of help you're looking for..."
               />
             </div>
+            {status === "success" && (
+              <p className="text-center text-sm font-medium text-green-600">
+                Message sent! We'll get back to you within 24 hours.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-center text-sm font-medium text-destructive">
+                Something went wrong. Please try again or email us directly.
+              </p>
+            )}
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 bg-gradient-olive text-primary-foreground py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-primary/15"
+              disabled={status === "loading"}
+              className="w-full inline-flex items-center justify-center gap-2 bg-gradient-olive text-primary-foreground py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-primary/15 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Send Message <Send className="w-4 h-4" />
+              {status === "loading" ? "Sending..." : <><span>Send Message</span><Send className="w-4 h-4" /></>}
             </button>
           </motion.form>
         </div>
