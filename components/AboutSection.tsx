@@ -45,7 +45,7 @@ const AboutSection = () => {
               Artesia Bookkeeping is based in Southern California and serves companies across the United States. We are QuickBooks Online specialists and promise business owners to keep their books with care, consistency, and excellent communication.
             </p>
             <p>
-              I studied finance and accounting at the University of Southern California, received an MBA from Harvard Business School, and am a QuickBooks ProAdvisor.
+              I studied finance and accounting at the University of Southern California, received an MBA from Harvard Business School, and am a QuickBooks Expert.
             </p>
           </div>
         </motion.div>

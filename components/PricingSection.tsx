@@ -6,7 +6,7 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Essential",
-    price: "$300",
+    price: "$199",
     period: "/month",
     description: "For solopreneurs, freelancers and small businesses getting started.",
     features: [
@@ -18,7 +18,7 @@ const plans = [
   },
   {
     name: "Professional",
-    price: "$500",
+    price: "$299",
     period: "/month",
     description: "For growing businesses that need more hands-on support.",
     features: [
@@ -30,7 +30,7 @@ const plans = [
   },
   {
     name: "Growth",
-    price: "$700",
+    price: "$499",
     period: "/month",
     description: "For established businesses needing a full-service partner.",
     features: [
